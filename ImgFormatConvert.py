@@ -1,4 +1,5 @@
 # -*- coding:utf-8 -*-
+
 import os
 import sys, getopt
 import glob
@@ -90,7 +91,7 @@ def convertFormat(source_path, dest_path, source_format, dest_format, recursion)
             if len(source_files) > 0:
                 for d_format in dest_format:
                     save_path = os.path.join(d_path, d_format.upper())
-                    if not os.path.isdir(save_path):
+                    if not os.path.exists(save_path):
                         os.makedirs(save_path)
                     for file in source_files:
                         with Image.open(file) as img:
